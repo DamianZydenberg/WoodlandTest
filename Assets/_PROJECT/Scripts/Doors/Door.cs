@@ -32,10 +32,12 @@ namespace WoodlandTest
 
             if (doorType == DoorType.PlayerOnly)
             {
+                doorOpeners[0].acceptedEntities.Clear();
                 doorOpeners[0].acceptedEntities.Add(EntityType.Player);
             }
             else
             {
+                doorOpeners[0].acceptedEntities.Clear();
                 doorOpeners[0].acceptedEntities.Add(EntityType.Player);
                 doorOpeners[0].acceptedEntities.Add(EntityType.Enemy);
             }
