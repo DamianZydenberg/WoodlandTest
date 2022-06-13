@@ -6,7 +6,7 @@ namespace WoodlandTest
     public class DoorOpener : MonoBehaviour
     {
         [SerializeField] List<DoorSlider> doorSliders;
-        [HideInInspector] public List<EntityType> acceptedEntities = new List<EntityType>();
+        public List<EntityType> acceptedEntities = new List<EntityType>();
 
         void OnTriggerEnter(Collider other)
         {
