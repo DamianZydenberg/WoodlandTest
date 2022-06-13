@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace WoodlandTest
 {
     public class Door : MonoBehaviour
     {
         public DoorType doorType;
-        public float openingSpeed;
         public float doorWidth;
+
+        public Material materialGreen;
+        public Material materialRed;
 
         void OnValidate()
         {
@@ -18,6 +21,13 @@ namespace WoodlandTest
                 doorSlider.directionFactor = doorSlider.doorSide == DoorSide.Left ? -1 : 1;
                 doorSlider.transform.localPosition = new Vector3(doorSlider.directionFactor * doorSlider.playerOnlyDoor.doorWidth / 4, 2, 0);
                 doorSlider.transform.localScale = new Vector3(doorSlider.playerOnlyDoor.doorWidth / 2, 5, 0.1f);
+
+                if (doorType == DoorType.PlayerOnly) doorSlider.gameObject.GetComponent<MeshRenderer>().material = materialGreen;
+                else 
+                {
+                    doorSlider.gameObject.GetComponent<MeshRenderer>().material = materialRed;
+                    doorSlider.gameObject.GetComponent<NavMeshObstacle>().carving = false;
+                }
             }
 
             if (doorType == DoorType.PlayerOnly)
