@@ -15,7 +15,8 @@ namespace WoodlandTest
             {
                 // So apparently Character Controller scripts keeps overriding position
                 // making teleportaion somehow difficult to implement (works on every other object)
-                _entityTransform.localPosition = transform.localPosition;
+                _entityTransform.position = transform.position;
+                _entityTransform.rotation = transform.rotation;
             }
         }
     }
