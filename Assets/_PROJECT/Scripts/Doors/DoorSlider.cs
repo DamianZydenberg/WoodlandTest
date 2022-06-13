@@ -6,7 +6,7 @@ namespace WoodlandTest
     {
         [HideInInspector] public float directionFactor;
 
-        public PlayerOnlyDoor playerOnlyDoor;
+        public Door playerOnlyDoor;
         public DoorSide doorSide;
 
         Vector3 targetOpenedPosition;
@@ -30,5 +30,4 @@ namespace WoodlandTest
         }
     }
 
-    public enum DoorSide { Left, Right }
 }
